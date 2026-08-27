@@ -20,8 +20,7 @@
 
     :root {
       --black: #020202;
-      --black-2: #070706;
-      --panel: rgba(8, 8, 8, 0.88);
+      --panel: rgba(8, 8, 8, 0.90);
 
       --gold: #8f6d2f;
       --gold-dark: #5e4518;
@@ -30,6 +29,7 @@
 
       --cream: #eee7d7;
       --muted: #aaa294;
+      --green: #a9b58b;
     }
 
     body {
@@ -40,8 +40,6 @@
       overflow-x: hidden;
     }
 
-    /* FIXED LUXURY BACKGROUND */
-
     body::before {
       content: "";
       position: fixed;
@@ -49,31 +47,10 @@
       z-index: -3;
 
       background:
-        radial-gradient(
-          circle at 50% 12%,
-          rgba(143, 109, 47, 0.15),
-          transparent 30%
-        ),
-
-        radial-gradient(
-          circle at 12% 55%,
-          rgba(94, 69, 24, 0.08),
-          transparent 26%
-        ),
-
-        radial-gradient(
-          circle at 88% 72%,
-          rgba(143, 109, 47, 0.08),
-          transparent 27%
-        ),
-
-        linear-gradient(
-          145deg,
-          #000000 0%,
-          #090806 38%,
-          #030303 70%,
-          #000000 100%
-        );
+        radial-gradient(circle at 50% 12%, rgba(143,109,47,.15), transparent 30%),
+        radial-gradient(circle at 12% 55%, rgba(94,69,24,.08), transparent 26%),
+        radial-gradient(circle at 88% 72%, rgba(143,109,47,.08), transparent 27%),
+        linear-gradient(145deg, #000 0%, #090806 38%, #030303 70%, #000 100%);
     }
 
     body::after {
@@ -82,7 +59,7 @@
       inset: 0;
       z-index: -2;
       pointer-events: none;
-      opacity: 0.38;
+      opacity: .38;
 
       background:
         linear-gradient(
@@ -102,14 +79,6 @@
           transparent 74%,
           rgba(198,167,104,.08) 74.08%,
           transparent 74.22%
-        ),
-
-        repeating-linear-gradient(
-          133deg,
-          transparent 0px,
-          transparent 170px,
-          rgba(198,167,104,.014) 171px,
-          transparent 173px
         );
     }
 
@@ -117,8 +86,6 @@
       color: inherit;
       text-decoration: none;
     }
-
-    /* HEADER */
 
     header {
       position: sticky;
@@ -134,11 +101,9 @@
 
       background: rgba(2,2,2,.95);
       border-bottom: 1px solid rgba(143,109,47,.28);
-
       backdrop-filter: blur(12px);
 
-      box-shadow:
-        0 8px 30px rgba(0,0,0,.55);
+      box-shadow: 0 8px 30px rgba(0,0,0,.55);
     }
 
     .brand {
@@ -148,8 +113,6 @@
     }
 
     .shield {
-      position: relative;
-
       width: 39px;
       height: 45px;
 
@@ -179,9 +142,6 @@
           rgba(143,109,47,.20),
           rgba(0,0,0,.30)
         );
-
-      box-shadow:
-        inset 0 0 12px rgba(198,167,104,.05);
     }
 
     .logo-text {
@@ -208,8 +168,6 @@
     nav a:hover {
       color: var(--gold-light);
     }
-
-    /* HERO */
 
     .hero {
       min-height: calc(100vh - 80px);
@@ -241,8 +199,7 @@
 
       box-shadow:
         0 30px 90px rgba(0,0,0,.74),
-        0 0 85px rgba(143,109,47,.05),
-        inset 0 0 50px rgba(255,255,255,.01);
+        0 0 85px rgba(143,109,47,.05);
 
       backdrop-filter: blur(10px);
     }
@@ -250,9 +207,7 @@
     .hero-frame::before,
     .hero-frame::after {
       content: "";
-
       position: absolute;
-
       width: 72px;
       height: 72px;
     }
@@ -309,7 +264,6 @@
 
     .hero h1 {
       font-family: "Cinzel", serif;
-
       font-weight: 500;
 
       font-size: clamp(54px, 8vw, 94px);
@@ -319,10 +273,6 @@
       color: var(--gold-light);
 
       line-height: 1.05;
-
-      text-shadow:
-        0 4px 18px rgba(0,0,0,.88),
-        0 0 20px rgba(143,109,47,.08);
     }
 
     .peptides {
@@ -331,7 +281,6 @@
       color: var(--gold-mid);
 
       font-size: 17px;
-
       letter-spacing: 14px;
 
       text-transform: uppercase;
@@ -356,7 +305,6 @@
 
     .tagline {
       font-size: 13px;
-
       letter-spacing: 5px;
 
       color: #cdc4b3;
@@ -374,7 +322,6 @@
       color: #aaa397;
 
       font-size: 16px;
-
       line-height: 1.9;
     }
 
@@ -382,7 +329,6 @@
       display: inline-block;
 
       margin-top: 38px;
-
       padding: 15px 42px;
 
       border: 1px solid var(--gold-mid);
@@ -392,7 +338,6 @@
       text-transform: uppercase;
 
       letter-spacing: 3px;
-
       font-size: 11px;
 
       background:
@@ -407,7 +352,6 @@
 
     .catalog-button:hover {
       background: var(--gold-mid);
-
       color: #020202;
 
       box-shadow:
@@ -415,8 +359,6 @@
 
       transform: translateY(-2px);
     }
-
-    /* SECTION BASE */
 
     .section {
       width: min(1180px, 92%);
@@ -427,8 +369,7 @@
 
       background: rgba(4,4,4,.76);
 
-      border:
-        1px solid rgba(143,109,47,.20);
+      border: 1px solid rgba(143,109,47,.20);
 
       box-shadow:
         0 25px 70px rgba(0,0,0,.50);
@@ -446,7 +387,6 @@
       color: var(--gold-mid);
 
       font-size: 10px;
-
       letter-spacing: 5px;
 
       text-transform: uppercase;
@@ -458,7 +398,6 @@
       font-family: "Cinzel", serif;
 
       font-size: 38px;
-
       font-weight: 500;
 
       letter-spacing: 5px;
@@ -474,7 +413,6 @@
       display: block;
 
       width: 130px;
-
       height: 1px;
 
       margin: 18px auto 0;
@@ -488,8 +426,6 @@
         );
     }
 
-    /* PRODUCT GRID */
-
     .products-grid {
       display: grid;
 
@@ -501,9 +437,9 @@
     .product-card {
       position: relative;
 
-      min-height: 290px;
+      min-height: 315px;
 
-      padding: 42px 25px;
+      padding: 38px 25px;
 
       display: flex;
       flex-direction: column;
@@ -585,31 +521,65 @@
     .product-card h3 {
       font-family: "Cinzel", serif;
 
-      font-size: 25px;
-
+      font-size: 24px;
       font-weight: 500;
 
       color: #eee7da;
 
-      margin-bottom: 10px;
+      margin-bottom: 8px;
+    }
+
+    .strength {
+      color: var(--gold-light);
+
+      font-size: 13px;
+
+      letter-spacing: 2px;
+
+      margin-bottom: 12px;
     }
 
     .product-type {
-      color: var(--gold-light);
+      color: #a59c8c;
 
-      font-size: 10px;
+      font-size: 9px;
 
       letter-spacing: 3px;
 
       text-transform: uppercase;
 
-      margin-bottom: 20px;
+      margin-bottom: 18px;
+    }
+
+    .stock {
+      margin-bottom: 16px;
+
+      font-size: 11px;
+
+      letter-spacing: 2px;
+
+      color: var(--green);
+
+      text-transform: uppercase;
+    }
+
+    .stock-dot {
+      display: inline-block;
+
+      width: 6px;
+      height: 6px;
+
+      margin-right: 7px;
+
+      border-radius: 50%;
+
+      background: var(--green);
     }
 
     .research-label {
       width: fit-content;
 
-      margin: auto;
+      margin: 0 auto;
 
       padding: 7px 13px;
 
@@ -618,14 +588,64 @@
       border:
         1px solid rgba(143,109,47,.34);
 
-      font-size: 10px;
+      font-size: 9px;
 
       letter-spacing: 2px;
 
       text-transform: uppercase;
     }
 
-    /* FEATURES */
+    .coming-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 28px;
+    }
+
+    .coming-card {
+      min-height: 220px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      border:
+        1px solid rgba(143,109,47,.16);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(12,12,12,.65),
+          rgba(3,3,3,.85)
+        );
+
+      opacity: .72;
+    }
+
+    .coming-card h3 {
+      font-family: "Cinzel", serif;
+
+      color: var(--gold-light);
+
+      font-size: 20px;
+
+      letter-spacing: 3px;
+
+      margin-bottom: 8px;
+    }
+
+    .coming-card p {
+      color: #8e877b;
+
+      font-size: 11px;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+    }
 
     .features-grid {
       display: grid;
@@ -669,8 +689,6 @@
       line-height: 1.8;
     }
 
-    /* NOTICE */
-
     .notice {
       width: min(1080px, 92%);
 
@@ -689,9 +707,6 @@
 
       border:
         1px solid rgba(143,109,47,.34);
-
-      box-shadow:
-        0 0 30px rgba(143,109,47,.06);
     }
 
     .notice h3 {
@@ -704,8 +719,6 @@
       text-transform: uppercase;
 
       font-size: 23px;
-
-      font-weight: 500;
 
       margin-bottom: 14px;
     }
@@ -738,11 +751,9 @@
       text-transform: uppercase;
     }
 
-    /* MOBILE */
-
     @media (max-width: 900px) {
-
-      .products-grid {
+      .products-grid,
+      .coming-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
@@ -752,7 +763,6 @@
     }
 
     @media (max-width: 650px) {
-
       header {
         padding: 18px 6%;
         flex-direction: column;
@@ -788,21 +798,12 @@
         letter-spacing: 8px;
       }
 
-      .tagline {
-        font-size: 10px;
-        letter-spacing: 3px;
-      }
-
       .section {
         padding: 45px 20px;
       }
 
-      .section-title h2 {
-        font-size: 27px;
-        letter-spacing: 3px;
-      }
-
-      .products-grid {
+      .products-grid,
+      .coming-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -821,6 +822,7 @@
   <nav>
     <a href="#home">Home</a>
     <a href="#catalog">Catalog</a>
+    <a href="#coming">Coming Soon</a>
     <a href="#about">About</a>
   </nav>
 
@@ -871,44 +873,152 @@
 
     <div class="product-card">
       <div class="flask">⚗</div>
-      <h3>Reta 10 mg</h3>
+      <h3>GLP3R</h3>
+      <div class="strength">10 MG</div>
       <div class="product-type">Research Material</div>
+      <div class="stock">
+        <span class="stock-dot"></span>
+        20 Available
+      </div>
       <div class="research-label">Research Use Only</div>
     </div>
 
-    <div class="product-card">
-      <div class="flask">⚗</div>
-      <h3>Reta 20 mg</h3>
-      <div class="product-type">Research Material</div>
-      <div class="research-label">Research Use Only</div>
-    </div>
 
     <div class="product-card">
       <div class="flask">⚗</div>
-      <h3>Reta 30 mg</h3>
+      <h3>GLP3R</h3>
+      <div class="strength">20 MG</div>
       <div class="product-type">Research Material</div>
+      <div class="stock">
+        <span class="stock-dot"></span>
+        20 Available
+      </div>
       <div class="research-label">Research Use Only</div>
     </div>
 
-    <div class="product-card">
-      <div class="flask">⚗</div>
-      <h3>MOTS-C 20 mg</h3>
-      <div class="product-type">Research Material</div>
-      <div class="research-label">Research Use Only</div>
-    </div>
 
     <div class="product-card">
       <div class="flask">⚗</div>
-      <h3>Tesamorelin 10 mg</h3>
+      <h3>GLP3R</h3>
+      <div class="strength">30 MG</div>
       <div class="product-type">Research Material</div>
+      <div class="stock">
+        <span class="stock-dot"></span>
+        10 Available
+      </div>
       <div class="research-label">Research Use Only</div>
     </div>
 
+
     <div class="product-card">
       <div class="flask">⚗</div>
-      <h3>Tesamorelin 20 mg</h3>
+      <h3>MOTS-C</h3>
+      <div class="strength">20 MG</div>
       <div class="product-type">Research Material</div>
+      <div class="stock">
+        <span class="stock-dot"></span>
+        10 Available
+      </div>
       <div class="research-label">Research Use Only</div>
+    </div>
+
+
+    <div class="product-card">
+      <div class="flask">⚗</div>
+      <h3>Tesamorelin</h3>
+      <div class="strength">10 MG</div>
+      <div class="product-type">Research Material</div>
+      <div class="stock">
+        <span class="stock-dot"></span>
+        10 Available
+      </div>
+      <div class="research-label">Research Use Only</div>
+    </div>
+
+
+    <div class="product-card">
+      <div class="flask">⚗</div>
+      <h3>Tesamorelin</h3>
+      <div class="strength">20 MG</div>
+      <div class="product-type">Research Material</div>
+      <div class="stock">
+        <span class="stock-dot"></span>
+        10 Available
+      </div>
+      <div class="research-label">Research Use Only</div>
+    </div>
+
+
+    <div class="product-card">
+      <div class="flask">⚗</div>
+      <h3>5-Amino</h3>
+      <div class="product-type">Research Material</div>
+      <div class="stock">
+        <span class="stock-dot"></span>
+        10 Available
+      </div>
+      <div class="research-label">Research Use Only</div>
+    </div>
+
+
+    <div class="product-card">
+      <div class="flask">⚗</div>
+      <h3>KLOW</h3>
+      <div class="strength">80 MG</div>
+      <div class="product-type">Research Material</div>
+      <div class="stock">
+        <span class="stock-dot"></span>
+        10 Available
+      </div>
+      <div class="research-label">Research Use Only</div>
+    </div>
+
+
+    <div class="product-card">
+      <div class="flask">⚗</div>
+      <h3>Bacteriostatic Water</h3>
+      <div class="strength">3 ML</div>
+      <div class="product-type">Research Supply</div>
+      <div class="stock">
+        <span class="stock-dot"></span>
+        30 Available
+      </div>
+      <div class="research-label">Research Use Only</div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section" id="coming">
+
+  <div class="section-title">
+    <small>Expanding the Collection</small>
+    <h2>Coming Soon</h2>
+  </div>
+
+  <div class="coming-grid">
+
+    <div class="coming-card">
+      <div>
+        <h3>More Research Materials</h3>
+        <p>Coming Soon</p>
+      </div>
+    </div>
+
+    <div class="coming-card">
+      <div>
+        <h3>New Additions</h3>
+        <p>Coming Soon</p>
+      </div>
+    </div>
+
+    <div class="coming-card">
+      <div>
+        <h3>Future Collection</h3>
+        <p>Coming Soon</p>
+      </div>
     </div>
 
   </div>
@@ -944,7 +1054,7 @@
     <div class="feature">
       <h3>Standard</h3>
       <p>
-        A premium black-and-gold brand identity built to
+        A premium black-and-gold brand identity designed to
         stand apart from generic research catalogs.
       </p>
     </div>
