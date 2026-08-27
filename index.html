@@ -3,207 +3,469 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Invictus Peptides</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
       scroll-behavior: smooth;
     }
 
+    :root {
+      --black: #030303;
+      --black-soft: #090909;
+      --panel: rgba(8, 8, 8, 0.86);
+
+      --gold: #9e7a32;
+      --gold-dark: #6f521d;
+      --gold-light: #c6a45f;
+
+      --cream: #eee7d8;
+      --muted: #a69e90;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      color: #f4e7c1;
-      background-color: #050505;
-      background-image:
-        radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.18), transparent 25%),
-        radial-gradient(circle at 80% 30%, rgba(212, 175, 55, 0.10), transparent 20%),
-        radial-gradient(circle at 50% 80%, rgba(212, 175, 55, 0.08), transparent 25%),
-        linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.92)),
-        url("https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1400&q=80");
-      background-size: cover;
-      background-attachment: fixed;
-      background-position: center;
+      font-family: "Montserrat", Arial, sans-serif;
+      color: var(--cream);
+      background: #020202;
       line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -3;
+
+      background:
+        radial-gradient(circle at 50% 0%, rgba(158,122,50,.18), transparent 32%),
+        radial-gradient(circle at 10% 45%, rgba(111,82,29,.10), transparent 28%),
+        radial-gradient(circle at 90% 70%, rgba(158,122,50,.08), transparent 30%),
+        linear-gradient(145deg, #010101 0%, #080704 42%, #020202 72%, #000 100%);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      pointer-events: none;
+      opacity: .45;
+
+      background:
+        linear-gradient(
+          118deg,
+          transparent 0%,
+          transparent 18%,
+          rgba(198,164,95,.10) 18.15%,
+          transparent 18.4%,
+          transparent 58%,
+          rgba(158,122,50,.08) 58.15%,
+          transparent 58.4%
+        ),
+        linear-gradient(
+          62deg,
+          transparent 0%,
+          transparent 72%,
+          rgba(198,164,95,.08) 72.15%,
+          transparent 72.4%
+        ),
+        repeating-linear-gradient(
+          135deg,
+          transparent 0px,
+          transparent 150px,
+          rgba(198,164,95,.018) 151px,
+          transparent 153px
+        );
     }
 
     a {
+      color: inherit;
       text-decoration: none;
-      color: #f4e7c1;
     }
 
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(0, 0, 0, 0.82);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(212, 175, 55, 0.4);
+
+      height: 78px;
+      padding: 0 7%;
+
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 18px 8%;
+      justify-content: space-between;
+
+      background: rgba(2,2,2,.94);
+      border-bottom: 1px solid rgba(158,122,50,.38);
+      backdrop-filter: blur(12px);
+
+      box-shadow: 0 8px 30px rgba(0,0,0,.5);
     }
 
-    .logo {
-      font-size: 28px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      color: #d4af37;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .shield {
+      width: 38px;
+      height: 44px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid var(--gold-light);
+
+      clip-path: polygon(
+        50% 0%,
+        92% 18%,
+        84% 73%,
+        50% 100%,
+        16% 73%,
+        8% 18%
+      );
+
+      color: var(--gold-light);
+      font-family: "Cinzel", serif;
+      font-size: 17px;
+
+      background:
+        linear-gradient(145deg, rgba(158,122,50,.16), rgba(0,0,0,.22));
+    }
+
+    .logo-text {
+      font-family: "Cinzel", serif;
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: 4px;
+      color: var(--gold-light);
     }
 
     nav {
       display: flex;
-      gap: 28px;
+      gap: 32px;
     }
 
     nav a {
-      font-size: 14px;
-      letter-spacing: 1px;
+      font-size: 11px;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      color: #f4e7c1;
-      transition: 0.25s;
+      color: #c6beb0;
+      transition: .25s ease;
     }
 
     nav a:hover {
-      color: #d4af37;
+      color: var(--gold-light);
     }
 
     .hero {
-      min-height: 100vh;
+      min-height: calc(100vh - 78px);
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 95px 20px;
+    }
+
+    .hero-frame {
+      position: relative;
+      width: min(980px, 94%);
+      padding: 88px 45px;
       text-align: center;
-      padding: 80px 20px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(15,15,14,.89),
+          rgba(3,3,3,.82)
+        );
+
+      border: 1px solid rgba(158,122,50,.58);
+
+      box-shadow:
+        0 30px 90px rgba(0,0,0,.72),
+        0 0 80px rgba(158,122,50,.06),
+        inset 0 0 50px rgba(255,255,255,.01);
+
+      backdrop-filter: blur(10px);
     }
 
-    .hero-box {
-      max-width: 950px;
-      background: rgba(0, 0, 0, 0.35);
-      border: 1px solid rgba(212, 175, 55, 0.35);
-      padding: 60px 30px;
-      border-radius: 24px;
-      box-shadow: 0 0 30px rgba(212, 175, 55, 0.08);
+    .hero-frame::before,
+    .hero-frame::after {
+      content: "";
+      position: absolute;
+      width: 72px;
+      height: 72px;
     }
 
-    .hero h1 {
-      font-size: 70px;
-      letter-spacing: 4px;
-      color: #d4af37;
+    .hero-frame::before {
+      top: -1px;
+      left: -1px;
+      border-top: 3px solid var(--gold);
+      border-left: 3px solid var(--gold);
+    }
+
+    .hero-frame::after {
+      right: -1px;
+      bottom: -1px;
+      border-right: 3px solid var(--gold);
+      border-bottom: 3px solid var(--gold);
+    }
+
+    .hero-symbol {
+      color: var(--gold-light);
+      font-family: "Cinzel", serif;
+      font-size: 22px;
+      letter-spacing: 5px;
       margin-bottom: 18px;
     }
 
-    .hero .sub {
-      font-size: 22px;
-      letter-spacing: 3px;
+    .hero h1 {
+      font-family: "Cinzel", serif;
+      font-weight: 500;
+      font-size: clamp(54px, 8vw, 92px);
+      letter-spacing: 12px;
+      color: var(--gold-light);
+
+      text-shadow:
+        0 3px 12px rgba(0,0,0,.9),
+        0 0 18px rgba(158,122,50,.12);
+
+      line-height: 1.1;
+    }
+
+    .peptides {
+      font-family: "Cinzel", serif;
+      color: var(--gold);
+      letter-spacing: 10px;
+      font-size: 18px;
+      margin-top: 3px;
       text-transform: uppercase;
-      color: #f4e7c1;
-      margin-bottom: 22px;
     }
 
-    .hero p {
-      max-width: 760px;
-      margin: 0 auto 35px;
-      font-size: 20px;
-      color: #ddd2b2;
+    .gold-line {
+      width: 260px;
+      height: 1px;
+      margin: 26px auto;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          var(--gold-light),
+          transparent
+        );
     }
 
-    .hero-btn {
+    .tagline {
+      font-size: 13px;
+      letter-spacing: 5px;
+      color: #cec5b4;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+
+    .hero-description {
+      max-width: 660px;
+      margin: auto;
+      color: #aaa397;
+      font-size: 16px;
+      line-height: 1.9;
+    }
+
+    .catalog-button {
       display: inline-block;
-      padding: 16px 34px;
-      border: 1px solid #d4af37;
-      color: #d4af37;
-      font-size: 15px;
-      letter-spacing: 2px;
+      margin-top: 38px;
+      padding: 15px 40px;
+
+      border: 1px solid var(--gold);
+
+      color: var(--gold-light);
       text-transform: uppercase;
-      border-radius: 10px;
-      background: rgba(212, 175, 55, 0.06);
-      transition: 0.25s;
+      letter-spacing: 3px;
+      font-size: 11px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(158,122,50,.10),
+          rgba(0,0,0,.28)
+        );
+
+      transition: .3s ease;
     }
 
-    .hero-btn:hover {
-      background: #d4af37;
-      color: #000;
-      box-shadow: 0 0 20px rgba(212, 175, 55, 0.28);
+    .catalog-button:hover {
+      background: var(--gold);
+      color: #020202;
+      box-shadow: 0 0 30px rgba(158,122,50,.24);
+      transform: translateY(-2px);
     }
 
     .section {
       width: min(1200px, 92%);
-      margin: 0 auto 90px;
-      background: rgba(0, 0, 0, 0.42);
-      border: 1px solid rgba(212, 175, 55, 0.22);
-      border-radius: 22px;
-      padding: 55px 35px;
-      backdrop-filter: blur(4px);
+      margin: 0 auto 110px;
+      padding: 62px 40px;
+
+      background: rgba(4,4,4,.74);
+
+      border: 1px solid rgba(158,122,50,.24);
+
+      box-shadow:
+        0 25px 70px rgba(0,0,0,.48);
+
+      backdrop-filter: blur(8px);
     }
 
-    .section h2 {
+    .section-title {
       text-align: center;
-      color: #d4af37;
-      font-size: 38px;
-      letter-spacing: 2px;
-      margin-bottom: 40px;
+      margin-bottom: 52px;
+    }
+
+    .section-title small {
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 5px;
       text-transform: uppercase;
+    }
+
+    .section-title h2 {
+      margin-top: 8px;
+      font-family: "Cinzel", serif;
+      font-size: 38px;
+      font-weight: 500;
+      letter-spacing: 5px;
+      color: var(--cream);
+      text-transform: uppercase;
+    }
+
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 130px;
+      height: 1px;
+      margin: 18px auto 0;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          var(--gold),
+          transparent
+        );
     }
 
     .products-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
     }
 
-    .card {
-      background: rgba(15, 15, 15, 0.78);
-      border: 1px solid rgba(212, 175, 55, 0.35);
-      border-radius: 18px;
-      padding: 28px 22px;
+    .product-card {
+      position: relative;
+      min-height: 280px;
+      padding: 40px 25px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       text-align: center;
-      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02);
+
+      background:
+        linear-gradient(
+          150deg,
+          rgba(18,17,15,.96),
+          rgba(4,4,4,.97)
+        );
+
+      border: 1px solid rgba(158,122,50,.36);
+
+      box-shadow:
+        0 14px 32px rgba(0,0,0,.38);
+
+      transition: .3s ease;
     }
 
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 0 20px rgba(212, 175, 55, 0.16);
-      border-color: #d4af37;
+    .product-card::before {
+      content: "";
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      width: 38px;
+      height: 38px;
+      border-top: 2px solid var(--gold);
+      border-left: 2px solid var(--gold);
     }
 
-    .card .icon {
-      font-size: 24px;
-      margin-bottom: 14px;
-      color: #d4af37;
+    .product-card::after {
+      content: "";
+      position: absolute;
+      right: -1px;
+      bottom: -1px;
+      width: 38px;
+      height: 38px;
+      border-right: 2px solid var(--gold);
+      border-bottom: 2px solid var(--gold);
     }
 
-    .card h3 {
-      color: #f4e7c1;
-      font-size: 26px;
-      margin-bottom: 8px;
+    .product-card:hover {
+      transform: translateY(-7px);
+
+      border-color: rgba(198,164,95,.8);
+
+      box-shadow:
+        0 22px 48px rgba(0,0,0,.58),
+        0 0 28px rgba(158,122,50,.10);
     }
 
-    .card p {
-      color: #d4af37;
+    .flask {
+      color: var(--gold);
+      font-size: 25px;
       margin-bottom: 16px;
-      font-size: 15px;
-      letter-spacing: 1px;
+    }
+
+    .product-card h3 {
+      font-family: "Cinzel", serif;
+      font-size: 25px;
+      font-weight: 500;
+      color: #eee7da;
+      margin-bottom: 10px;
+    }
+
+    .product-type {
+      color: var(--gold-light);
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .research-label {
+      width: fit-content;
+      margin: auto;
+      padding: 7px 13px;
+
+      color: #bcb4a6;
+
+      border:
+        1px solid rgba(158,122,50,.42);
+
+      font-size: 10px;
+      letter-spacing: 2px;
       text-transform: uppercase;
     }
 
-    .tag {
-      display: inline-block;
-      padding: 8px 14px;
-      border: 1px solid rgba(212, 175, 55, 0.45);
-      border-radius: 999px;
-      font-size: 12px;
-      color: #f4e7c1;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      background: rgba(212, 175, 55, 0.08);
-    }
-
-    .features {
+    .features-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
       gap: 24px;
@@ -211,198 +473,286 @@
     }
 
     .feature {
-      padding: 20px;
-      border-left: 1px solid rgba(212, 175, 55, 0.18);
-      border-right: 1px solid rgba(212, 175, 55, 0.18);
+      padding: 25px 22px;
+      border-left: 1px solid rgba(158,122,50,.14);
+      border-right: 1px solid rgba(158,122,50,.14);
     }
 
     .feature h3 {
-      color: #d4af37;
+      font-family: "Cinzel", serif;
+      color: var(--gold-light);
+      font-size: 19px;
+      letter-spacing: 2px;
       margin-bottom: 12px;
-      font-size: 22px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+      font-weight: 500;
     }
 
     .feature p {
-      color: #ddd2b2;
-      font-size: 16px;
+      color: #aaa397;
+      font-size: 14px;
+      line-height: 1.8;
     }
 
     .notice {
       width: min(1100px, 92%);
-      margin: 0 auto 80px;
-      background: rgba(8, 8, 8, 0.82);
-      border: 1px solid rgba(212, 175, 55, 0.40);
-      border-radius: 20px;
-      padding: 30px;
+      margin: 0 auto 85px;
+      padding: 34px 28px;
+
       text-align: center;
-      box-shadow: 0 0 20px rgba(212, 175, 55, 0.10);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(12,12,11,.94),
+          rgba(3,3,3,.94)
+        );
+
+      border:
+        1px solid rgba(158,122,50,.42);
+
+      box-shadow:
+        0 0 30px rgba(158,122,50,.07);
     }
 
     .notice h3 {
-      color: #d4af37;
-      margin-bottom: 12px;
-      font-size: 28px;
-      letter-spacing: 2px;
+      font-family: "Cinzel", serif;
+      color: var(--gold-light);
+      letter-spacing: 4px;
       text-transform: uppercase;
+      font-size: 23px;
+      font-weight: 500;
+      margin-bottom: 14px;
     }
 
     .notice p {
-      color: #e8ddb9;
-      max-width: 850px;
-      margin: 0 auto;
-      font-size: 16px;
+      max-width: 860px;
+      margin: auto;
+      color: #b0a89a;
+      font-size: 13px;
+      line-height: 1.8;
     }
 
     footer {
       text-align: center;
-      padding: 35px 20px 50px;
-      color: #c9b57b;
-      letter-spacing: 2px;
-      font-size: 14px;
+      padding: 38px 20px 55px;
+
+      font-family: "Cinzel", serif;
+
+      color: var(--gold);
+      letter-spacing: 4px;
+      font-size: 11px;
       text-transform: uppercase;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 760px) {
+
       header {
+        height: auto;
+        padding: 18px 6%;
         flex-direction: column;
         gap: 14px;
       }
 
-      .hero h1 {
-        font-size: 44px;
-      }
-
-      .hero .sub {
-        font-size: 16px;
-      }
-
-      .hero p {
-        font-size: 17px;
-      }
-
       nav {
-        gap: 16px;
+        gap: 17px;
         flex-wrap: wrap;
         justify-content: center;
       }
 
-      .section {
-        padding: 40px 20px;
+      .logo-text {
+        font-size: 17px;
       }
 
-      .section h2 {
+      .hero {
+        min-height: auto;
+        padding: 70px 15px;
+      }
+
+      .hero-frame {
+        padding: 62px 22px;
+      }
+
+      .hero h1 {
+        font-size: 47px;
+        letter-spacing: 6px;
+      }
+
+      .peptides {
+        font-size: 14px;
+        letter-spacing: 6px;
+      }
+
+      .tagline {
+        font-size: 11px;
+        letter-spacing: 3px;
+      }
+
+      .section {
+        padding: 45px 20px;
+      }
+
+      .section-title h2 {
         font-size: 28px;
+        letter-spacing: 3px;
       }
     }
   </style>
 </head>
+
 <body>
 
-  <header>
-    <div class="logo">INVICTUS PEPTIDES</div>
-
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#catalog">Catalog</a>
-      <a href="#about">About</a>
-    </nav>
-  </header>
-
-  <section class="hero" id="home">
-    <div class="hero-box">
-      <h1>INVICTUS</h1>
-      <div class="sub">Precision. Quality. Research Elevated.</div>
-      <p>
-        Premium research materials presented in a clean, sophisticated catalog
-        built for a luxury-level brand presence and a high-end research identity.
-      </p>
-      <a href="#catalog" class="hero-btn">View Catalog</a>
-    </div>
-  </section>
-
-  <section class="section" id="catalog">
-    <h2>Featured Products</h2>
-
-    <div class="products-grid">
-      <div class="card">
-        <div class="icon">⚗</div>
-        <h3>Reta 10 mg</h3>
-        <p>Research Material</p>
-        <span class="tag">Research Use Only</span>
-      </div>
-
-      <div class="card">
-        <div class="icon">⚗</div>
-        <h3>Reta 20 mg</h3>
-        <p>Research Material</p>
-        <span class="tag">Research Use Only</span>
-      </div>
-
-      <div class="card">
-        <div class="icon">⚗</div>
-        <h3>Reta 30 mg</h3>
-        <p>Research Material</p>
-        <span class="tag">Research Use Only</span>
-      </div>
-
-      <div class="card">
-        <div class="icon">⚗</div>
-        <h3>MOTS-C 20 mg</h3>
-        <p>Research Material</p>
-        <span class="tag">Research Use Only</span>
-      </div>
-
-      <div class="card">
-        <div class="icon">⚗</div>
-        <h3>Tesamorelin 10 mg</h3>
-        <p>Research Material</p>
-        <span class="tag">Research Use Only</span>
-      </div>
-
-      <div class="card">
-        <div class="icon">⚗</div>
-        <h3>Tesamorelin 20 mg</h3>
-        <p>Research Material</p>
-        <span class="tag">Research Use Only</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="about">
-    <h2>Why Choose Invictus</h2>
-
-    <div class="features">
-      <div class="feature">
-        <h3>Quality First</h3>
-        <p>Built around a polished, premium presentation with a focus on clarity and consistency.</p>
-      </div>
-
-      <div class="feature">
-        <h3>Clean Catalog</h3>
-        <p>Easy-to-read product sections designed to feel high-end, organized, and professional.</p>
-      </div>
-
-      <div class="feature">
-        <h3>Luxury Presence</h3>
-        <p>A black-and-gold brand image that gives off a wealth, discipline, and premium-quality vibe.</p>
-      </div>
-    </div>
-  </section>
-
-  <div class="notice">
-    <h3>Research Use Only</h3>
-    <p>
-      All products displayed on this website are intended strictly for laboratory research purposes only.
-      Not for human or animal consumption. Not for diagnostic or therapeutic use.
-      Keep out of reach of children.
-    </p>
+<header>
+  <div class="brand">
+    <div class="shield">I</div>
+    <div class="logo-text">INVICTUS PEPTIDES</div>
   </div>
 
-  <footer>
-    © 2026 Invictus Peptides. All Rights Reserved.
-  </footer>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#catalog">Catalog</a>
+    <a href="#about">About</a>
+  </nav>
+</header>
+
+
+<section class="hero" id="home">
+  <div class="hero-frame">
+
+    <div class="hero-symbol">◆</div>
+
+    <h1>INVICTUS</h1>
+
+    <div class="peptides">Peptides</div>
+
+    <div class="gold-line"></div>
+
+    <div class="tagline">
+      Precision. Quality. Research Elevated.
+    </div>
+
+    <p class="hero-description">
+      Premium research materials presented through a refined,
+      professional catalog built around quality, consistency,
+      and a luxury research identity.
+    </p>
+
+    <a href="#catalog" class="catalog-button">
+      View Catalog
+    </a>
+
+  </div>
+</section>
+
+
+<section class="section" id="catalog">
+
+  <div class="section-title">
+    <small>Invictus Collection</small>
+    <h2>Research Catalog</h2>
+  </div>
+
+  <div class="products-grid">
+
+    <div class="product-card">
+      <div class="flask">⚗</div>
+      <h3>Reta 10 mg</h3>
+      <div class="product-type">Research Material</div>
+      <div class="research-label">Research Use Only</div>
+    </div>
+
+    <div class="product-card">
+      <div class="flask">⚗</div>
+      <h3>Reta 20 mg</h3>
+      <div class="product-type">Research Material</div>
+      <div class="research-label">Research Use Only</div>
+    </div>
+
+    <div class="product-card">
+      <div class="flask">⚗</div>
+      <h3>Reta 30 mg</h3>
+      <div class="product-type">Research Material</div>
+      <div class="research-label">Research Use Only</div>
+    </div>
+
+    <div class="product-card">
+      <div class="flask">⚗</div>
+      <h3>MOTS-C 20 mg</h3>
+      <div class="product-type">Research Material</div>
+      <div class="research-label">Research Use Only</div>
+    </div>
+
+    <div class="product-card">
+      <div class="flask">⚗</div>
+      <h3>Tesamorelin 10 mg</h3>
+      <div class="product-type">Research Material</div>
+      <div class="research-label">Research Use Only</div>
+    </div>
+
+    <div class="product-card">
+      <div class="flask">⚗</div>
+      <h3>Tesamorelin 20 mg</h3>
+      <div class="product-type">Research Material</div>
+      <div class="research-label">Research Use Only</div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section" id="about">
+
+  <div class="section-title">
+    <small>The Invictus Standard</small>
+    <h2>Built Around Quality</h2>
+  </div>
+
+  <div class="features-grid">
+
+    <div class="feature">
+      <h3>Quality</h3>
+      <p>
+        A polished research catalog built around clarity,
+        consistency, and professional presentation.
+      </p>
+    </div>
+
+    <div class="feature">
+      <h3>Precision</h3>
+      <p>
+        Clean product organization designed to make research
+        materials easy to identify and compare.
+      </p>
+    </div>
+
+    <div class="feature">
+      <h3>Standard</h3>
+      <p>
+        A premium black-and-gold brand identity built to
+        stand apart from generic research catalogs.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<div class="notice">
+
+  <h3>Research Use Only</h3>
+
+  <p>
+    Products displayed on this website are intended strictly
+    for laboratory research purposes only. Not for human or
+    animal consumption. Not for diagnostic or therapeutic use.
+    Keep out of reach of children.
+  </p>
+
+</div>
+
+
+<footer>
+  Invictus Peptides · © 2026
+</footer>
 
 </body>
 </html>
