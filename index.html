@@ -87,6 +87,21 @@
     }
 
     .bg-watermark {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.wm-gladiator {
+  width: min(500px, 55vw);
+  height: auto;
+  opacity: 0.08;
+  filter: drop-shadow(0 0 30px rgba(167, 131, 63, 0.18));
+}
       position: fixed;
       inset: 0;
       z-index: -1;
@@ -795,9 +810,13 @@
 <body>
 
 <div class="bg-watermark">
-  <div class="wm-shield">I</div>
-  <div class="wm-text">INVICTUS</div>
+  <img src="golden_spartan_warrior_with_potion_vial.png" alt="Invictus Gladiator" class="wm-gladiator">
 </div>
+
+
+
+
+
 
 <header>
 
