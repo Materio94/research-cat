@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Invictus Peptides</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
+
     * {
       margin: 0;
       padding: 0;
@@ -34,7 +37,6 @@
       background: #020202;
       line-height: 1.6;
       overflow-x: hidden;
-      position: relative;
     }
 
     body::before {
@@ -42,11 +44,18 @@
       position: fixed;
       inset: 0;
       z-index: -3;
+
       background:
         radial-gradient(circle at 50% 12%, rgba(143,109,47,.15), transparent 30%),
         radial-gradient(circle at 12% 55%, rgba(94,69,24,.08), transparent 26%),
         radial-gradient(circle at 88% 72%, rgba(143,109,47,.08), transparent 27%),
-        linear-gradient(145deg, #000 0%, #090806 38%, #030303 70%, #000 100%);
+        linear-gradient(
+          145deg,
+          #000000 0%,
+          #090806 38%,
+          #030303 70%,
+          #000000 100%
+        );
     }
 
     body::after {
@@ -54,8 +63,9 @@
       position: fixed;
       inset: 0;
       z-index: -2;
-      pointer-events: none;
       opacity: .38;
+      pointer-events: none;
+
       background:
         linear-gradient(
           116deg,
@@ -79,22 +89,27 @@
     .bg-watermark {
       position: fixed;
       inset: 0;
-      z-index: 0;
+      z-index: -1;
+
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
+
       pointer-events: none;
-      opacity: 0.06;
+      opacity: .045;
     }
 
-    .bg-watermark .wm-shield {
-      width: 260px;
-      height: 300px;
+    .wm-shield {
+      width: 250px;
+      height: 290px;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       border: 2px solid var(--gold-light);
+
       clip-path: polygon(
         50% 0%,
         92% 18%,
@@ -103,19 +118,22 @@
         16% 73%,
         8% 18%
       );
+
       font-family: "Cinzel", serif;
-      font-size: 110px;
+      font-size: 105px;
+
       color: var(--gold-light);
-      background: linear-gradient(145deg, rgba(143,109,47,.18), rgba(0,0,0,.12));
-      margin-bottom: 18px;
     }
 
-    .bg-watermark .wm-text {
+    .wm-text {
+      margin-top: 16px;
+
       font-family: "Cinzel", serif;
-      font-size: 72px;
+      font-size: 66px;
+
       letter-spacing: 12px;
+
       color: var(--gold-light);
-      text-transform: uppercase;
     }
 
     a {
@@ -123,28 +141,24 @@
       text-decoration: none;
     }
 
-    header,
-    .hero,
-    .section,
-    .notice,
-    footer {
-      position: relative;
-      z-index: 1;
-    }
-
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
+
       min-height: 80px;
       padding: 0 7%;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       background: rgba(2,2,2,.95);
-      border-bottom: 1px solid rgba(143,109,47,.28);
+
+      border-bottom:
+        1px solid rgba(143,109,47,.28);
+
       backdrop-filter: blur(12px);
-      box-shadow: 0 8px 30px rgba(0,0,0,.55);
     }
 
     .brand {
@@ -156,13 +170,18 @@
     .shield {
       width: 39px;
       height: 45px;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       color: var(--gold-light);
+
       font-family: "Cinzel", serif;
-      font-size: 16px;
-      border: 1px solid var(--gold-mid);
+
+      border:
+        1px solid var(--gold-mid);
+
       clip-path: polygon(
         50% 0%,
         92% 18%,
@@ -171,28 +190,31 @@
         16% 73%,
         8% 18%
       );
-      background: linear-gradient(145deg, rgba(143,109,47,.20), rgba(0,0,0,.30));
     }
 
     .logo-text {
       font-family: "Cinzel", serif;
+
       font-size: 19px;
-      font-weight: 500;
+
       letter-spacing: 4px;
+
       color: var(--gold-light);
     }
 
     nav {
       display: flex;
-      gap: 32px;
+      gap: 30px;
     }
 
     nav a {
       font-size: 11px;
+
       letter-spacing: 2px;
+
       text-transform: uppercase;
+
       color: #c2baad;
-      transition: .25s ease;
     }
 
     nav a:hover {
@@ -201,27 +223,45 @@
 
     .hero {
       min-height: calc(100vh - 80px);
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       padding: 95px 20px;
     }
 
     .hero-frame {
       position: relative;
+
       width: min(980px, 94%);
+
       padding: 90px 45px;
+
       text-align: center;
-      background: linear-gradient(145deg, rgba(15,15,14,.91), rgba(3,3,3,.84));
-      border: 1px solid rgba(143,109,47,.48);
-      box-shadow: 0 30px 90px rgba(0,0,0,.74), 0 0 85px rgba(143,109,47,.05);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(15,15,14,.91),
+          rgba(3,3,3,.84)
+        );
+
+      border:
+        1px solid rgba(143,109,47,.48);
+
+      box-shadow:
+        0 30px 90px rgba(0,0,0,.74);
+
       backdrop-filter: blur(10px);
     }
 
     .hero-frame::before,
     .hero-frame::after {
       content: "";
+
       position: absolute;
+
       width: 72px;
       height: 72px;
     }
@@ -229,28 +269,44 @@
     .hero-frame::before {
       top: -1px;
       left: -1px;
-      border-top: 3px solid var(--gold-mid);
-      border-left: 3px solid var(--gold-mid);
+
+      border-top:
+        3px solid var(--gold-mid);
+
+      border-left:
+        3px solid var(--gold-mid);
     }
 
     .hero-frame::after {
       right: -1px;
       bottom: -1px;
-      border-right: 3px solid var(--gold-mid);
-      border-bottom: 3px solid var(--gold-mid);
+
+      border-right:
+        3px solid var(--gold-mid);
+
+      border-bottom:
+        3px solid var(--gold-mid);
     }
 
     .hero-emblem {
       width: 70px;
       height: 80px;
+
       margin: 0 auto 20px;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       font-family: "Cinzel", serif;
+
       font-size: 26px;
+
       color: var(--gold-light);
-      border: 1px solid var(--gold-mid);
+
+      border:
+        1px solid var(--gold-mid);
+
       clip-path: polygon(
         50% 0%,
         92% 18%,
@@ -259,380 +315,459 @@
         16% 73%,
         8% 18%
       );
-      background: linear-gradient(145deg, rgba(143,109,47,.17), rgba(0,0,0,.20));
     }
 
     .hero h1 {
       font-family: "Cinzel", serif;
-      font-weight: 500;
+
       font-size: clamp(54px, 8vw, 94px);
+
+      font-weight: 500;
+
       letter-spacing: 12px;
+
       color: var(--gold-light);
-      line-height: 1.05;
     }
 
     .peptides {
       font-family: "Cinzel", serif;
+
       color: var(--gold-mid);
+
       font-size: 17px;
+
       letter-spacing: 14px;
+
       text-transform: uppercase;
-      margin-top: 5px;
     }
 
     .gold-line {
       width: 270px;
       height: 1px;
+
       margin: 28px auto 24px;
-      background: linear-gradient(90deg, transparent, var(--gold-mid), transparent);
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          var(--gold-mid),
+          transparent
+        );
     }
 
     .tagline {
       font-size: 13px;
+
       letter-spacing: 5px;
+
       color: #cdc4b3;
+
       text-transform: uppercase;
+
       margin-bottom: 30px;
     }
 
     .hero-description {
       max-width: 650px;
+
       margin: auto;
+
       color: #aaa397;
+
       font-size: 16px;
+
       line-height: 1.9;
     }
 
     .catalog-button {
       display: inline-block;
+
       margin-top: 38px;
+
       padding: 15px 42px;
-      border: 1px solid var(--gold-mid);
+
+      border:
+        1px solid var(--gold-mid);
+
       color: var(--gold-light);
+
       text-transform: uppercase;
+
       letter-spacing: 3px;
+
       font-size: 11px;
-      background: linear-gradient(135deg, rgba(143,109,47,.08), rgba(0,0,0,.32));
-      transition: .3s ease;
     }
 
     .catalog-button:hover {
       background: var(--gold-mid);
       color: #020202;
-      box-shadow: 0 0 30px rgba(143,109,47,.22);
-      transform: translateY(-2px);
     }
 
     .section {
       width: min(1180px, 92%);
-      margin: 0 auto 110px;
-      padding: 62px 40px;
-      background: rgba(4,4,4,.76);
-      border: 1px solid rgba(143,109,47,.20);
-      box-shadow: 0 25px 70px rgba(0,0,0,.50);
-      backdrop-filter: blur(8px);
+
+      margin:
+        0 auto 110px;
+
+      padding:
+        62px 40px;
+
+      background:
+        rgba(4,4,4,.76);
+
+      border:
+        1px solid rgba(143,109,47,.20);
     }
 
     .section-title {
       text-align: center;
+
       margin-bottom: 52px;
     }
 
     .section-title small {
       color: var(--gold-mid);
+
       font-size: 10px;
+
       letter-spacing: 5px;
+
       text-transform: uppercase;
     }
 
     .section-title h2 {
       margin-top: 8px;
-      font-family: "Cinzel", serif;
-      font-size: 38px;
-      font-weight: 500;
-      letter-spacing: 5px;
-      color: var(--cream);
-      text-transform: uppercase;
-    }
 
-    .section-title::after {
-      content: "";
-      display: block;
-      width: 130px;
-      height: 1px;
-      margin: 18px auto 0;
-      background: linear-gradient(90deg, transparent, var(--gold-mid), transparent);
+      font-family: "Cinzel", serif;
+
+      font-size: 38px;
+
+      letter-spacing: 5px;
+
+      color: var(--cream);
+
+      text-transform: uppercase;
     }
 
     .products-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
       gap: 28px;
+    }
+
+    .product-link {
+      display: block;
     }
 
     .product-card {
       position: relative;
-      min-height: 430px;
-      padding: 34px 24px;
+
+      min-height: 300px;
+
+      padding: 40px 25px;
+
       display: flex;
+
       flex-direction: column;
-      justify-content: flex-start;
+
+      align-items: center;
+
+      justify-content: center;
+
       text-align: center;
-      background: linear-gradient(150deg, rgba(18,17,15,.97), rgba(4,4,4,.98));
-      border: 1px solid rgba(143,109,47,.26);
-      box-shadow: 0 14px 32px rgba(0,0,0,.40);
+
+      background:
+        linear-gradient(
+          150deg,
+          rgba(18,17,15,.97),
+          rgba(4,4,4,.98)
+        );
+
+      border:
+        1px solid rgba(143,109,47,.26);
+
       transition: .3s ease;
     }
 
     .product-card::before {
       content: "";
+
       position: absolute;
+
       top: -1px;
       left: -1px;
+
       width: 38px;
       height: 38px;
-      border-top: 2px solid var(--gold-mid);
-      border-left: 2px solid var(--gold-mid);
+
+      border-top:
+        2px solid var(--gold-mid);
+
+      border-left:
+        2px solid var(--gold-mid);
     }
 
     .product-card::after {
       content: "";
+
       position: absolute;
+
       right: -1px;
       bottom: -1px;
+
       width: 38px;
       height: 38px;
-      border-right: 2px solid var(--gold-mid);
-      border-bottom: 2px solid var(--gold-mid);
+
+      border-right:
+        2px solid var(--gold-mid);
+
+      border-bottom:
+        2px solid var(--gold-mid);
     }
 
-    .product-card:hover {
+    .product-link:hover .product-card {
       transform: translateY(-7px);
-      border-color: rgba(198,167,104,.68);
-      box-shadow: 0 22px 48px rgba(0,0,0,.60), 0 0 28px rgba(143,109,47,.10);
+
+      border-color:
+        rgba(198,167,104,.68);
+
+      box-shadow:
+        0 22px 48px rgba(0,0,0,.60),
+        0 0 28px rgba(143,109,47,.10);
     }
 
     .flask {
       color: var(--gold-mid);
+
       font-size: 25px;
+
       margin-bottom: 17px;
     }
 
     .product-card h3 {
       font-family: "Cinzel", serif;
-      font-size: 24px;
-      font-weight: 500;
+
+      font-size: 25px;
+
       color: #eee7da;
+
       margin-bottom: 8px;
     }
 
     .strength {
       color: var(--gold-light);
+
       font-size: 13px;
+
       letter-spacing: 2px;
-      margin-bottom: 12px;
+
+      margin-bottom: 14px;
     }
 
     .product-type {
       color: #a59c8c;
-      font-size: 9px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
 
-    .product-desc {
-      color: #b8b0a2;
-      font-size: 13px;
-      line-height: 1.75;
-      margin-bottom: 18px;
-      text-align: center;
+      font-size: 9px;
+
+      letter-spacing: 3px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 20px;
     }
 
     .stock {
-      margin-bottom: 16px;
       font-size: 11px;
+
       letter-spacing: 2px;
+
       color: var(--green);
+
       text-transform: uppercase;
     }
 
     .stock-dot {
       display: inline-block;
+
       width: 6px;
       height: 6px;
+
       margin-right: 7px;
+
       border-radius: 50%;
+
       background: var(--green);
     }
 
-    .research-label {
-      width: fit-content;
-      margin: auto auto 0;
-      padding: 7px 13px;
-      color: #bcb4a6;
-      border: 1px solid rgba(143,109,47,.34);
+    .click-text {
+      margin-top: 20px;
+
+      color: var(--gold-mid);
+
       font-size: 9px;
+
       letter-spacing: 2px;
+
       text-transform: uppercase;
     }
 
     .coming-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
       gap: 28px;
     }
 
     .coming-card {
       min-height: 220px;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       text-align: center;
-      border: 1px solid rgba(143,109,47,.16);
-      background: linear-gradient(145deg, rgba(12,12,12,.65), rgba(3,3,3,.85));
-      opacity: .72;
+
+      background:
+        rgba(4,4,4,.75);
+
+      border:
+        1px solid rgba(143,109,47,.16);
+
+      opacity: .70;
     }
 
     .coming-card h3 {
       font-family: "Cinzel", serif;
+
       color: var(--gold-light);
-      font-size: 20px;
+
       letter-spacing: 3px;
-      margin-bottom: 8px;
     }
 
     .coming-card p {
+      margin-top: 8px;
+
       color: #8e877b;
-      font-size: 11px;
+
+      font-size: 10px;
+
       letter-spacing: 2px;
+
       text-transform: uppercase;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      text-align: center;
-    }
-
-    .feature {
-      padding: 28px 24px;
-      border-left: 1px solid rgba(143,109,47,.12);
-      border-right: 1px solid rgba(143,109,47,.12);
-    }
-
-    .feature h3 {
-      font-family: "Cinzel", serif;
-      color: var(--gold-light);
-      font-size: 19px;
-      letter-spacing: 2px;
-      margin-bottom: 12px;
-      font-weight: 500;
-    }
-
-    .feature p {
-      color: #aaa397;
-      font-size: 14px;
-      line-height: 1.8;
     }
 
     .notice {
       width: min(1080px, 92%);
-      margin: 0 auto 85px;
-      padding: 36px 28px;
+
+      margin:
+        0 auto 85px;
+
+      padding:
+        36px 28px;
+
       text-align: center;
-      background: linear-gradient(145deg, rgba(12,12,11,.96), rgba(3,3,3,.96));
-      border: 1px solid rgba(143,109,47,.34);
+
+      background: #070707;
+
+      border:
+        1px solid rgba(143,109,47,.34);
     }
 
     .notice h3 {
       font-family: "Cinzel", serif;
+
       color: var(--gold-light);
+
       letter-spacing: 4px;
-      text-transform: uppercase;
-      font-size: 23px;
+
       margin-bottom: 14px;
     }
 
     .notice p {
       max-width: 860px;
+
       margin: auto;
+
       color: #b0a89a;
+
       font-size: 13px;
-      line-height: 1.8;
     }
 
     footer {
       text-align: center;
-      padding: 38px 20px 55px;
+
+      padding:
+        38px 20px 55px;
+
       font-family: "Cinzel", serif;
+
       color: var(--gold-mid);
+
       letter-spacing: 4px;
+
       font-size: 11px;
-      text-transform: uppercase;
     }
 
     @media (max-width: 900px) {
+
       .products-grid,
       .coming-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .features-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .bg-watermark .wm-text {
-        font-size: 46px;
-        letter-spacing: 8px;
-      }
-
-      .bg-watermark .wm-shield {
-        width: 190px;
-        height: 220px;
-        font-size: 80px;
+        grid-template-columns:
+          repeat(2, 1fr);
       }
     }
 
     @media (max-width: 650px) {
+
       header {
         padding: 18px 6%;
+
         flex-direction: column;
+
         gap: 14px;
       }
 
       nav {
-        gap: 17px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
+        gap: 15px;
 
-      .logo-text {
-        font-size: 16px;
+        flex-wrap: wrap;
+
+        justify-content: center;
       }
 
       .hero {
         min-height: auto;
-        padding: 70px 15px;
+
+        padding:
+          70px 15px;
       }
 
       .hero-frame {
-        padding: 62px 22px;
+        padding:
+          62px 22px;
       }
 
       .hero h1 {
         font-size: 45px;
+
         letter-spacing: 5px;
       }
 
       .peptides {
         font-size: 13px;
+
         letter-spacing: 8px;
       }
 
       .section {
-        padding: 45px 20px;
+        padding:
+          45px 20px;
       }
 
       .products-grid,
@@ -640,271 +775,370 @@
         grid-template-columns: 1fr;
       }
 
-      .bg-watermark .wm-text {
-        font-size: 28px;
-        letter-spacing: 5px;
-      }
-
-      .bg-watermark .wm-shield {
+      .wm-shield {
         width: 140px;
-        height: 160px;
+        height: 165px;
+
         font-size: 58px;
       }
+
+      .wm-text {
+        font-size: 28px;
+
+        letter-spacing: 5px;
+      }
     }
+
   </style>
 </head>
 
 <body>
 
-  <div class="bg-watermark">
-    <div class="wm-shield">I</div>
-    <div class="wm-text">Invictus</div>
+<div class="bg-watermark">
+  <div class="wm-shield">I</div>
+  <div class="wm-text">INVICTUS</div>
+</div>
+
+<header>
+
+  <div class="brand">
+    <div class="shield">I</div>
+    <div class="logo-text">INVICTUS PEPTIDES</div>
   </div>
 
-  <header>
-    <div class="brand">
-      <div class="shield">I</div>
-      <div class="logo-text">INVICTUS PEPTIDES</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#catalog">Catalog</a>
+    <a href="#coming">Coming Soon</a>
+  </nav>
+
+</header>
+
+
+<section class="hero" id="home">
+
+  <div class="hero-frame">
+
+    <div class="hero-emblem">I</div>
+
+    <h1>INVICTUS</h1>
+
+    <div class="peptides">
+      Peptides
     </div>
 
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#catalog">Catalog</a>
-      <a href="#coming">Coming Soon</a>
-      <a href="#about">About</a>
-    </nav>
-  </header>
+    <div class="gold-line"></div>
 
-  <section class="hero" id="home">
-    <div class="hero-frame">
-      <div class="hero-emblem">I</div>
-
-      <h1>INVICTUS</h1>
-
-      <div class="peptides">Peptides</div>
-
-      <div class="gold-line"></div>
-
-      <div class="tagline">Precision. Quality. Research Elevated.</div>
-
-      <p class="hero-description">
-        Premium research materials presented through a refined,
-        professional catalog built around quality, consistency,
-        and a distinctive research identity.
-      </p>
-
-      <a href="#catalog" class="catalog-button">View Catalog</a>
-    </div>
-  </section>
-
-  <section class="section" id="catalog">
-    <div class="section-title">
-      <small>Invictus Collection</small>
-      <h2>Research Catalog</h2>
+    <div class="tagline">
+      Precision. Quality. Research Elevated.
     </div>
 
-    <div class="products-grid">
-
-      <div class="product-card">
-        <div class="flask">⚗</div>
-        <h3>GLP-3R</h3>
-        <div class="strength">10 MG</div>
-        <div class="product-type">Research Material</div>
-        <div class="product-desc">
-          Research material associated with triple-receptor pathway
-          studies involving GLP-1, GIP, and glucagon signaling activity
-          in controlled laboratory settings.
-        </div>
-        <div class="stock"><span class="stock-dot"></span>20 Available</div>
-        <div class="research-label">Research Use Only</div>
-      </div>
-
-      <div class="product-card">
-        <div class="flask">⚗</div>
-        <h3>GLP-3R</h3>
-        <div class="strength">20 MG</div>
-        <div class="product-type">Research Material</div>
-        <div class="product-desc">
-          Research material associated with triple-receptor pathway
-          studies involving GLP-1, GIP, and glucagon signaling activity
-          for expanded analytical and comparative research work.
-        </div>
-        <div class="stock"><span class="stock-dot"></span>20 Available</div>
-        <div class="research-label">Research Use Only</div>
-      </div>
-
-      <div class="product-card">
-        <div class="flask">⚗</div>
-        <h3>GLP-3R</h3>
-        <div class="strength">30 MG</div>
-        <div class="product-type">Research Material</div>
-        <div class="product-desc">
-          Higher-strength research material cataloged for triple-receptor
-          signaling studies involving GLP-1, GIP, and glucagon pathway
-          interactions in laboratory applications.
-        </div>
-        <div class="stock"><span class="stock-dot"></span>10 Available</div>
-        <div class="research-label">Research Use Only</div>
-      </div>
-
-      <div class="product-card">
-        <div class="flask">⚗</div>
-        <h3>MOTS-C</h3>
-        <div class="strength">20 MG</div>
-        <div class="product-type">Research Material</div>
-        <div class="product-desc">
-          Mitochondrial-derived peptide used in laboratory research involving
-          cellular metabolism, signaling behavior, and stress-response pathway
-          observation.
-        </div>
-        <div class="stock"><span class="stock-dot"></span>10 Available</div>
-        <div class="research-label">Research Use Only</div>
-      </div>
-
-      <div class="product-card">
-        <div class="flask">⚗</div>
-        <h3>Tesamorelin</h3>
-        <div class="strength">10 MG</div>
-        <div class="product-type">Research Material</div>
-        <div class="product-desc">
-          Synthetic GHRH analog cataloged for laboratory research related
-          to growth-hormone signaling and associated biochemical pathway
-          analysis.
-        </div>
-        <div class="stock"><span class="stock-dot"></span>10 Available</div>
-        <div class="research-label">Research Use Only</div>
-      </div>
-
-      <div class="product-card">
-        <div class="flask">⚗</div>
-        <h3>Tesamorelin</h3>
-        <div class="strength">20 MG</div>
-        <div class="product-type">Research Material</div>
-        <div class="product-desc">
-          Higher-strength synthetic GHRH analog intended for research involving
-          growth-hormone signaling behavior and controlled laboratory evaluation.
-        </div>
-        <div class="stock"><span class="stock-dot"></span>10 Available</div>
-        <div class="research-label">Research Use Only</div>
-      </div>
-
-      <div class="product-card">
-        <div class="flask">⚗</div>
-        <h3>5-Amino</h3>
-        <div class="product-type">Research Material</div>
-        <div class="product-desc">
-          Research material cataloged for exploratory laboratory work involving
-          cellular metabolic processes and pathway-focused analytical studies.
-        </div>
-        <div class="stock"><span class="stock-dot"></span>10 Available</div>
-        <div class="research-label">Research Use Only</div>
-      </div>
-
-      <div class="product-card">
-        <div class="flask">⚗</div>
-        <h3>KLOW</h3>
-        <div class="strength">80 MG</div>
-        <div class="product-type">Research Material</div>
-        <div class="product-desc">
-          Research material presented for controlled laboratory applications
-          and cataloged for organized study, comparison, and internal reference use.
-        </div>
-        <div class="stock"><span class="stock-dot"></span>10 Available</div>
-        <div class="research-label">Research Use Only</div>
-      </div>
-
-      <div class="product-card">
-        <div class="flask">⚗</div>
-        <h3>Bacteriostatic Water</h3>
-        <div class="strength">3 ML</div>
-        <div class="product-type">Research Supply</div>
-        <div class="product-desc">
-          Sterile bacteriostatic water supplied as a laboratory research accessory
-          for compatible research preparation and handling procedures.
-        </div>
-        <div class="stock"><span class="stock-dot"></span>30 Available</div>
-        <div class="research-label">Research Use Only</div>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="section" id="coming">
-    <div class="section-title">
-      <small>Expanding the Collection</small>
-      <h2>Coming Soon</h2>
-    </div>
-
-    <div class="coming-grid">
-      <div class="coming-card">
-        <div>
-          <h3>More Research Materials</h3>
-          <p>Coming Soon</p>
-        </div>
-      </div>
-
-      <div class="coming-card">
-        <div>
-          <h3>New Additions</h3>
-          <p>Coming Soon</p>
-        </div>
-      </div>
-
-      <div class="coming-card">
-        <div>
-          <h3>Future Collection</h3>
-          <p>Coming Soon</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="about">
-    <div class="section-title">
-      <small>The Invictus Standard</small>
-      <h2>Built Around Quality</h2>
-    </div>
-
-    <div class="features-grid">
-      <div class="feature">
-        <h3>Quality</h3>
-        <p>
-          A polished research catalog built around clarity,
-          consistency, and professional presentation.
-        </p>
-      </div>
-
-      <div class="feature">
-        <h3>Precision</h3>
-        <p>
-          Clean product organization designed to make research
-          materials easy to identify and compare.
-        </p>
-      </div>
-
-      <div class="feature">
-        <h3>Standard</h3>
-        <p>
-          A premium black-and-gold brand identity designed to
-          stand apart from generic research catalogs.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <div class="notice">
-    <h3>Research Use Only</h3>
-    <p>
-      Products displayed on this website are intended strictly
-      for laboratory research purposes only. Not for human or
-      animal consumption. Not for diagnostic or therapeutic use.
-      Keep out of reach of children.
+    <p class="hero-description">
+      Premium research materials presented through
+      a refined and professional research catalog.
     </p>
+
+    <a href="#catalog" class="catalog-button">
+      View Catalog
+    </a>
+
   </div>
 
-  <footer>
-    Invictus Peptides · © 2026
-  </footer>
+</section>
+
+
+<section class="section" id="catalog">
+
+  <div class="section-title">
+    <small>Invictus Collection</small>
+    <h2>Research Catalog</h2>
+  </div>
+
+  <div class="products-grid">
+
+
+    <!-- GLP-3R 10 MG - CLICKABLE -->
+
+    <a href="glp3r-10.html" class="product-link">
+
+      <div class="product-card">
+
+        <div class="flask">⚗</div>
+
+        <h3>GLP-3R</h3>
+
+        <div class="strength">
+          10 MG
+        </div>
+
+        <div class="product-type">
+          Research Material
+        </div>
+
+        <div class="stock">
+          <span class="stock-dot"></span>
+          20 Available
+        </div>
+
+        <div class="click-text">
+          View Details
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <!-- GLP-3R 20 MG -->
+
+    <div class="product-card">
+
+      <div class="flask">⚗</div>
+
+      <h3>GLP-3R</h3>
+
+      <div class="strength">
+        20 MG
+      </div>
+
+      <div class="product-type">
+        Research Material
+      </div>
+
+      <div class="stock">
+        <span class="stock-dot"></span>
+        20 Available
+      </div>
+
+    </div>
+
+
+    <!-- GLP-3R 30 MG -->
+
+    <div class="product-card">
+
+      <div class="flask">⚗</div>
+
+      <h3>GLP-3R</h3>
+
+      <div class="strength">
+        30 MG
+      </div>
+
+      <div class="product-type">
+        Research Material
+      </div>
+
+      <div class="stock">
+        <span class="stock-dot"></span>
+        10 Available
+      </div>
+
+    </div>
+
+
+    <!-- MOTS-C -->
+
+    <div class="product-card">
+
+      <div class="flask">⚗</div>
+
+      <h3>MOTS-C</h3>
+
+      <div class="strength">
+        20 MG
+      </div>
+
+      <div class="product-type">
+        Research Material
+      </div>
+
+      <div class="stock">
+        <span class="stock-dot"></span>
+        10 Available
+      </div>
+
+    </div>
+
+
+    <!-- TESAMORELIN 10 -->
+
+    <div class="product-card">
+
+      <div class="flask">⚗</div>
+
+      <h3>Tesamorelin</h3>
+
+      <div class="strength">
+        10 MG
+      </div>
+
+      <div class="product-type">
+        Research Material
+      </div>
+
+      <div class="stock">
+        <span class="stock-dot"></span>
+        10 Available
+      </div>
+
+    </div>
+
+
+    <!-- TESAMORELIN 20 -->
+
+    <div class="product-card">
+
+      <div class="flask">⚗</div>
+
+      <h3>Tesamorelin</h3>
+
+      <div class="strength">
+        20 MG
+      </div>
+
+      <div class="product-type">
+        Research Material
+      </div>
+
+      <div class="stock">
+        <span class="stock-dot"></span>
+        10 Available
+      </div>
+
+    </div>
+
+
+    <!-- 5 AMINO -->
+
+    <div class="product-card">
+
+      <div class="flask">⚗</div>
+
+      <h3>5-Amino</h3>
+
+      <div class="product-type">
+        Research Material
+      </div>
+
+      <div class="stock">
+        <span class="stock-dot"></span>
+        10 Available
+      </div>
+
+    </div>
+
+
+    <!-- KLOW -->
+
+    <div class="product-card">
+
+      <div class="flask">⚗</div>
+
+      <h3>KLOW</h3>
+
+      <div class="strength">
+        80 MG
+      </div>
+
+      <div class="product-type">
+        Research Material
+      </div>
+
+      <div class="stock">
+        <span class="stock-dot"></span>
+        10 Available
+      </div>
+
+    </div>
+
+
+    <!-- BAC WATER -->
+
+    <div class="product-card">
+
+      <div class="flask">⚗</div>
+
+      <h3>Bacteriostatic Water</h3>
+
+      <div class="strength">
+        3 ML
+      </div>
+
+      <div class="product-type">
+        Research Supply
+      </div>
+
+      <div class="stock">
+        <span class="stock-dot"></span>
+        30 Available
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section" id="coming">
+
+  <div class="section-title">
+    <small>Expanding the Collection</small>
+    <h2>Coming Soon</h2>
+  </div>
+
+  <div class="coming-grid">
+
+    <div class="coming-card">
+      <div>
+        <h3>More Research Materials</h3>
+        <p>Coming Soon</p>
+      </div>
+    </div>
+
+    <div class="coming-card">
+      <div>
+        <h3>New Additions</h3>
+        <p>Coming Soon</p>
+      </div>
+    </div>
+
+    <div class="coming-card">
+      <div>
+        <h3>Future Collection</h3>
+        <p>Coming Soon</p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<div class="notice">
+
+  <h3>
+    Research Use Only
+  </h3>
+
+  <p>
+    Products displayed on this website are intended strictly
+    for laboratory research purposes only. Not for human or
+    animal consumption. Not for diagnostic or therapeutic use.
+  </p>
+
+</div>
+
+
+<footer>
+  Invictus Peptides · © 2026
+</footer>
+
 
 </body>
 </html>
+
+
+
+
