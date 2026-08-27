@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research Catalog</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0b0b0d;
+      color: white;
+    }
+
+    header {
+      padding: 22px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #24242a;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 24px;
+    }
+
+    .hero {
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #111118, #1b1425);
+    }
+
+    .hero h1 {
+      font-size: 56px;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #bcbcc5;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .products {
+      padding: 70px 8%;
+    }
+
+    .products h2 {
+      text-align: center;
+      font-size: 38px;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: #151519;
+      border: 1px solid #292930;
+      border-radius: 16px;
+      padding: 28px;
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #7c4dff;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .card p {
+      color: #aaaab3;
+      margin-bottom: 16px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 10px;
+      background: #292135;
+      border-radius: 8px;
+      font-size: 13px;
+    }
+
+    .notice {
+      margin: 40px 8%;
+      padding: 24px;
+      text-align: center;
+      border: 1px solid #393944;
+      border-radius: 12px;
+      color: #b8b8c2;
+    }
+
+    footer {
+      padding: 35px;
+      text-align: center;
+      color: #777781;
+    }
+
+    @media (max-width: 650px) {
+      nav {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">RESEARCH CAT</div>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#products">Catalog</a>
+    <a href="#about">About</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>Research Starts Here.</h1>
+
+    <p>
+      High-quality research materials presented in a clean,
+      straightforward catalog built for laboratory and analytical research.
+    </p>
+  </div>
+</section>
+
+<section class="products" id="products">
+  <h2>Research Catalog</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Reta 10 mg</h3>
+      <p>Research material.</p>
+      <span class="tag">Research Use Only</span>
+    </div>
+
+    <div class="card">
+      <h3>Reta 20 mg</h3>
+      <p>Research material.</p>
+      <span class="tag">Research Use Only</span>
+    </div>
+
+    <div class="card">
+      <h3>Reta 30 mg</h3>
+      <p>Research material.</p>
+      <span class="tag">Research Use Only</span>
+    </div>
+
+    <div class="card">
+      <h3>MOTS-C 20 mg</h3>
+      <p>Research material.</p>
+      <span class="tag">Research Use Only</span>
+    </div>
+
+    <div class="card">
+      <h3>Tesamorelin 10 mg</h3>
+      <p>Research material.</p>
+      <span class="tag">Research Use Only</span>
+    </div>
+
+    <div class="card">
+      <h3>Tesamorelin 20 mg</h3>
+      <p>Research material.</p>
+      <span class="tag">Research Use Only</span>
+    </div>
+
+  </div>
+</section>
+
+<div class="notice" id="about">
+  All materials displayed on this website are intended strictly for
+  laboratory and research purposes and are not intended for human consumption.
+</div>
+
+<footer>
+  © 2026 Research Cat
+</footer>
+
+</body>
+</html>
