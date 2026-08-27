@@ -12,218 +12,281 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     :root {
-      --gold:#8f6d2f;
-      --gold-mid:#a7833f;
-      --gold-light:#c6a768;
-      --cream:#eee7d7;
-      --green:#a9b58b;
+      --gold: #8f6d2f;
+      --gold-mid: #a7833f;
+      --gold-light: #c6a768;
+      --cream: #eee7d7;
+      --green: #a9b58b;
     }
 
     body {
-      font-family:"Montserrat", Arial, sans-serif;
-      color:var(--cream);
-      background:#020202;
-      line-height:1.7;
-      min-height:100vh;
+      font-family: "Montserrat", Arial, sans-serif;
+      color: var(--cream);
+      background: #020202;
+      line-height: 1.7;
+      min-height: 100vh;
     }
 
     body::before {
-      content:"";
-      position:fixed;
-      inset:0;
-      z-index:-2;
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+
       background:
-        radial-gradient(circle at 50% 10%, rgba(143,109,47,.14), transparent 30%),
-        linear-gradient(145deg,#000 0%,#090806 40%,#020202 100%);
+        radial-gradient(
+          circle at 50% 10%,
+          rgba(143,109,47,.14),
+          transparent 30%
+        ),
+        linear-gradient(
+          145deg,
+          #000 0%,
+          #090806 40%,
+          #020202 100%
+        );
     }
 
     .background-warrior {
-      position:fixed;
-      inset:0;
-      z-index:-1;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      pointer-events:none;
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      pointer-events: none;
     }
 
     .background-warrior img {
-      width:min(760px,72vw);
-      height:auto;
-      opacity:.10;
+      width: min(760px, 72vw);
+      height: auto;
+
+      opacity: .10;
+
       filter:
         brightness(1.05)
         contrast(1.08)
-        drop-shadow(0 0 45px rgba(167,131,63,.22));
+        drop-shadow(
+          0 0 45px
+          rgba(167,131,63,.22)
+        );
     }
 
     header {
-      min-height:80px;
-      padding:0 7%;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      background:rgba(2,2,2,.95);
-      border-bottom:1px solid rgba(143,109,47,.28);
-      position:sticky;
-      top:0;
-      z-index:100;
+      min-height: 80px;
+      padding: 0 7%;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      background: rgba(2,2,2,.95);
+
+      border-bottom:
+        1px solid rgba(143,109,47,.28);
+
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     .brand {
-      font-family:"Cinzel",serif;
-      color:var(--gold-light);
-      letter-spacing:4px;
-      font-size:19px;
+      font-family: "Cinzel", serif;
+      color: var(--gold-light);
+      letter-spacing: 4px;
+      font-size: 19px;
     }
 
     .back-link {
-      color:#c8beac;
-      font-size:11px;
-      letter-spacing:2px;
-      text-transform:uppercase;
-      text-decoration:none;
+      color: #c8beac;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      color: var(--gold-light);
     }
 
     .page-wrap {
-      width:min(1100px,92%);
-      margin:70px auto;
+      width: min(1100px, 92%);
+      margin: 70px auto;
     }
 
     .product-panel {
-      background:rgba(5,5,5,.88);
-      border:1px solid rgba(143,109,47,.38);
-      padding:55px 45px;
-      box-shadow:0 25px 80px rgba(0,0,0,.55);
-      backdrop-filter:blur(10px);
+      background: rgba(5,5,5,.88);
+
+      border:
+        1px solid rgba(143,109,47,.38);
+
+      padding: 55px 45px;
+
+      box-shadow:
+        0 25px 80px rgba(0,0,0,.55);
+
+      backdrop-filter: blur(10px);
     }
 
     .top-row {
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:50px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: start;
     }
 
     .product-title {
-      font-family:"Cinzel",serif;
-      font-size:58px;
-      letter-spacing:5px;
-      color:var(--gold-light);
-      margin-bottom:6px;
+      font-family: "Cinzel", serif;
+      font-size: 58px;
+      letter-spacing: 5px;
+      color: var(--gold-light);
+      margin-bottom: 6px;
     }
 
     .type {
-      font-size:11px;
-      letter-spacing:3px;
-      text-transform:uppercase;
-      color:#b7ad9d;
-      margin-bottom:26px;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #b7ad9d;
+      margin-bottom: 26px;
     }
 
     .stock {
-      display:inline-block;
-      padding:9px 14px;
-      border:1px solid rgba(169,181,139,.45);
-      color:var(--green);
-      font-size:11px;
-      letter-spacing:2px;
-      text-transform:uppercase;
-      margin-bottom:30px;
+      display: inline-block;
+      padding: 9px 14px;
+      border: 1px solid rgba(169,181,139,.45);
+      color: var(--green);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
-    .info-box {
-      border:1px solid rgba(143,109,47,.22);
-      padding:30px;
-      background:rgba(15,14,12,.72);
+    .price-box {
+      border: 1px solid rgba(143,109,47,.22);
+      padding: 30px;
+      background: rgba(15,14,12,.72);
     }
 
-    .info-label {
-      font-size:10px;
-      letter-spacing:3px;
-      text-transform:uppercase;
-      color:#9f9687;
-      margin-bottom:12px;
+    .price-label,
+    .qty-label {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #9f9687;
+      margin-bottom: 10px;
     }
 
-    .info-main {
-      font-family:"Cinzel",serif;
-      font-size:25px;
-      color:var(--gold-light);
-      margin-bottom:20px;
+    .price {
+      font-family: "Cinzel", serif;
+      font-size: 34px;
+      color: var(--gold-light);
+      margin-bottom: 22px;
     }
 
-    .info-text {
-      color:#aaa294;
-      font-size:13px;
-      line-height:1.8;
+    .quantity {
+      width: 100%;
+      padding: 13px;
+      background: #050505;
+      color: var(--cream);
+      border: 1px solid rgba(143,109,47,.35);
+      margin-bottom: 18px;
+      font-size: 16px;
+    }
+
+    .action-button {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid var(--gold-mid);
+      background: rgba(143,109,47,.08);
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
     }
 
     .description-section {
-      margin-top:50px;
-      padding-top:40px;
-      border-top:1px solid rgba(143,109,47,.20);
+      margin-top: 50px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(143,109,47,.20);
     }
 
     .section-heading {
-      font-family:"Cinzel",serif;
-      font-size:24px;
-      letter-spacing:3px;
-      color:var(--gold-light);
-      margin-bottom:18px;
+      font-family: "Cinzel", serif;
+      font-size: 24px;
+      letter-spacing: 3px;
+      color: var(--gold-light);
+      margin-bottom: 18px;
     }
 
     .description-section p {
-      color:#b8b0a2;
-      margin-bottom:18px;
-      max-width:900px;
+      color: #b8b0a2;
+      margin-bottom: 18px;
+      max-width: 900px;
     }
 
     .spec-grid {
-      margin-top:30px;
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:16px;
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
     }
 
     .spec {
-      border:1px solid rgba(143,109,47,.18);
-      padding:20px;
-      background:rgba(10,10,10,.75);
+      border: 1px solid rgba(143,109,47,.18);
+      padding: 20px;
+      background: rgba(10,10,10,.75);
     }
 
     .spec small {
-      display:block;
-      color:var(--gold-mid);
-      letter-spacing:2px;
-      text-transform:uppercase;
-      font-size:9px;
-      margin-bottom:6px;
+      display: block;
+      color: var(--gold-mid);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 9px;
+      margin-bottom: 6px;
     }
 
     .spec strong {
-      color:#e7dfd1;
-      font-size:14px;
-      font-weight:500;
+      color: #e7dfd1;
+      font-size: 14px;
+      font-weight: 500;
     }
 
     .notice {
-      margin-top:40px;
-      padding:24px;
-      border:1px solid rgba(143,109,47,.28);
-      background:rgba(5,5,5,.9);
-      color:#aaa294;
-      font-size:12px;
-      line-height:1.8;
+      margin-top: 40px;
+      padding: 24px;
+      border: 1px solid rgba(143,109,47,.28);
+      background: rgba(5,5,5,.9);
+      color: #aaa294;
+      font-size: 12px;
+      line-height: 1.8;
     }
 
-    @media (max-width:800px) {
-      .top-row { grid-template-columns:1fr; }
-      .spec-grid { grid-template-columns:1fr; }
-      .product-title { font-size:42px; }
-      .product-panel { padding:35px 22px; }
+    @media (max-width: 800px) {
+      .top-row {
+        grid-template-columns: 1fr;
+      }
+
+      .spec-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-title {
+        font-size: 42px;
+      }
+
+      .product-panel {
+        padding: 35px 22px;
+      }
     }
   </style>
 </head>
@@ -231,12 +294,23 @@
 <body>
 
 <div class="background-warrior">
-  <img src="golden_spartan_warrior_with_potion_vial.png" alt="">
+  <img
+    src="golden_spartan_warrior_with_potion_vial.png"
+    alt=""
+  >
 </div>
 
 <header>
-  <div class="brand">INVICTUS PEPTIDES</div>
-  <a class="back-link" href="index.html#catalog">← Back to Catalog</a>
+  <div class="brand">
+    INVICTUS PEPTIDES
+  </div>
+
+  <a
+    class="back-link"
+    href="index.html#catalog"
+  >
+    ← Back to Catalog
+  </a>
 </header>
 
 <div class="page-wrap">
@@ -246,22 +320,53 @@
     <div class="top-row">
 
       <div>
-        <div class="product-title">5-AMINO</div>
-        <div class="type">Research Material</div>
-        <div class="stock">● 10 Available</div>
+        <div class="product-title">
+          5-AMINO
+        </div>
+
+        <div class="type">
+          Research Material
+        </div>
+
+        <div class="stock">
+          ● 10 Available
+        </div>
       </div>
 
-      <div class="info-box">
-        <div class="info-label">Product Classification</div>
+      <div class="price-box">
 
-        <div class="info-main">
-          Small-Molecule Research Material
+        <div class="price-label">
+          Product Price
         </div>
 
-        <div class="info-text">
-          Cataloged for controlled laboratory work involving biochemical
-          pathway analysis, cellular signaling, and comparative research.
+        <div class="price">
+          $XX.XX
         </div>
+
+        <div class="qty-label">
+          Quantity
+        </div>
+
+        <select class="quantity">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+
+        <button
+          class="action-button"
+          type="button"
+        >
+          Product Action
+        </button>
+
       </div>
 
     </div>
@@ -273,15 +378,15 @@
       </div>
 
       <p>
-        5-Amino is cataloged as a small-molecule research material for controlled
-        laboratory studies involving cellular pathways, biochemical signaling,
-        and compound-response analysis.
+        5-Amino is a small-molecule research material commonly studied
+        in laboratory work involving cellular metabolism, enzyme activity,
+        and biochemical signaling pathways.
       </p>
 
       <p>
-        Laboratory investigations may focus on how the material interacts with
-        selected enzymes, cellular systems, or metabolic pathways under defined
-        experimental conditions.
+        Researchers may use it in controlled experiments to compare
+        compound behavior, pathway activity, and cellular responses
+        under defined laboratory conditions.
       </p>
 
       <div class="section-heading">
@@ -289,17 +394,15 @@
       </div>
 
       <p>
-        Research may include pathway characterization, comparative compound
-        analysis, enzyme interaction studies, cellular-response observation,
-        and other analytical work intended to better understand molecular
-        behavior in laboratory models.
+        Research may include enzyme-interaction studies, cellular-response
+        analysis, compound comparison, and investigation of metabolic
+        signaling pathways.
       </p>
 
       <p>
-        Information presented here is for product identification and research
-        cataloging only. Specific pathway or target information should be matched
-        to the exact chemical identity and supporting documentation for the
-        material being studied.
+        Specific molecular targets should be matched to the verified
+        chemical identity and supporting documentation for the material
+        being studied.
       </p>
 
       <div class="spec-grid">
@@ -325,8 +428,9 @@
 
     <div class="notice">
       <strong>RESEARCH USE ONLY.</strong><br>
-      This product is intended strictly for laboratory research purposes.
-      Not for human or animal consumption. Not for diagnostic or therapeutic use.
+      For laboratory research purposes only.
+      Not for human or animal consumption.
+      Not for diagnostic or therapeutic use.
     </div>
 
   </div>
@@ -335,3 +439,7 @@
 
 </body>
 </html>
+
+
+
+
